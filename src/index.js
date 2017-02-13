@@ -104,6 +104,12 @@ require('!!script!../theme/js/jquery.min.js')
 require('../theme/css/_bootstrap.scss')
 require('../theme/js/bootstrap.min.js')
 
+require('../theme/wp/style.css')
+require('../theme/wp/index.php')
+require('../theme/wp/header.php')
+require('../theme/wp/footer.php')
+require('../theme/wp/functions.php')
+
 import Application from './components/Application.jsx'
 
 render (

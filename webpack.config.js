@@ -1,13 +1,17 @@
 var webpack = require('webpack');
 var path = require('path');
 var bundle_css = new (require('extract-text-webpack-plugin'))('css/bundle.css');
-var dist_cleanup = new (require('webpack-cleanup-plugin'))
-var prod_env = new webpack.DefinePlugin({'process.env': { NODE_ENV: JSON.stringify('production') }})
+var dist_cleanup = new (require('webpack-cleanup-plugin'));
+var prod_env = new webpack.DefinePlugin({'process.env': { NODE_ENV: JSON.stringify('production') }});
 
-var DEBUG = ((process.env.npm_lifecycle_script.split(' ')[1]).replace('--', '') !== 'production')
+var PARAMS = process.env.npm_lifecycle_script.split(' ');
+var DEBUG = (PARAMS[1].replace('--', '') !== 'production');
+var DEPLOY = PARAMS[PARAMS.length-1].replace(/\"/g, '').replace('--', '').split('=');
+var DEPLOY_PATH = (DEPLOY[0] == 'deploy') ? DEPLOY[1] : ''
+
 var SRC_DIR = path.resolve(__dirname, 'src');
 var THEME_DIR = path.resolve(__dirname, 'theme');
-var DIST_DIR = path.resolve(__dirname, 'dist');
+var DIST_DIR = (DEPLOY_PATH == '') ? path.resolve(__dirname, 'dist') : DEPLOY_PATH;
 var DIST_TIMESTAMP = new Date().getTime();
 
 var config = {
@@ -24,11 +28,16 @@ var config = {
   module: {
     loaders: [
       {
+        test: /(\.php|\.css)$/,
+        loader: 'file-loader?name=[name].[ext]!extract-loader!html-loader!ejs-html?DIST_TIMESTAMP=' + DIST_TIMESTAMP + (DEBUG ? '&DEBUG':'')
+      },
+      {
         test: /(\.html)$/,
-        loader: 'file-loader?name=[name].[ext]!extract-loader!html-loader!ejs-html?DIST_TIMESTAMP=' + DIST_TIMESTAMP
+        loader: 'file-loader?name=[name].[ext]!extract-loader!html-loader!ejs-html?DIST_TIMESTAMP=' + DIST_TIMESTAMP + (DEBUG ? '&DEBUG':'')
       },
       {
         test: /(\.css)$/,
+        exclude: /theme\/wp\//,
         loader: DEBUG ? 'style-loader!css-loader': bundle_css.extract('style-loader', '!css-loader')
       },
       {
