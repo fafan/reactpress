@@ -1,0 +1,1841 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Documentation &middot; Marketing theme &middot; Official Bootstrap Themes
+      
+    </title>
+
+    
+      <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+      <link href="../assets/css/toolkit-minimal.css" rel="stylesheet">
+      <link href="../assets/css/application-minimal.css" rel="stylesheet">
+    
+
+    
+      <link href="../assets/css/docs.css" rel="stylesheet">
+    
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      /* …curses ios, etc… */
+      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+          width: 1px;
+          min-width: 100%;
+          *width: 100%;
+        }
+        #stage {
+          height: 1px;
+          overflow: auto;
+          min-height: 100vh;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+  </head>
+
+
+<body>
+  <div class="bte hidden" id="sidebar">
+  <ul class="nav bqr nav-stacked zj">
+    <li class="baj">Examples</li>
+    <li class="m">
+      <a class="sb" href="../index.html">Startup</a>
+    </li>
+    <li class="m">
+      <a class="sb" href="../minimal/index.html">Minimal</a>
+    </li>
+    <li class="m">
+      <a class="sb" href="../bold/index.html">Bold</a>
+    </li>
+    <li class="nav-divider"></li>
+    <li class="baj">Docs</li>
+    <li class="m">
+      <a class="sb active" href="../docs/index.html">Toolkit</a>
+    </li>
+    <li class="m">
+      <a class="sb" href="http://getbootstrap.com">Bootstrap</a>
+    </li>
+  </ul>
+</div>
+
+
+  <div class="btd" id="app-stage">
+
+    <button class="dm rd btg" data-target="#app-stage" data-toggle="stage">
+      <span class="a bki bto"></span>
+      Menu
+    </button>
+
+    
+      <div class="dd" id="content">
+        <div class="e">
+          <h1>Documentation</h1>
+          <p>Find out what's included in your Bootstrap theme and how to compile source files. Includes live examples and code snippets for every new component.</p>
+        </div>
+      </div>
+      <div class="e docs-content">
+        
+<h1 id="contents">Contents</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#intro" id="markdown-toc-intro">Intro</a></li>
+  <li><a href="#whats-included" id="markdown-toc-whats-included">What’s included</a>    <ul>
+      <li><a href="#getting-started" id="markdown-toc-getting-started">Getting started</a></li>
+      <li><a href="#gulpfilejs" id="markdown-toc-gulpfilejs">Gulpfile.js</a></li>
+      <li><a href="#theme-source-code" id="markdown-toc-theme-source-code">Theme source code</a></li>
+    </ul>
+  </li>
+  <li><a href="#custom-builds" id="markdown-toc-custom-builds">Custom builds</a></li>
+  <li><a href="#basic-template" id="markdown-toc-basic-template">Basic template</a></li>
+  <li><a href="#new-components" id="markdown-toc-new-components">New components</a>    <ul>
+      <li><a href="#entypo" id="markdown-toc-entypo">Entypo</a>        <ul>
+          <li><a href="#available-icons" id="markdown-toc-available-icons">Available icons</a></li>
+          <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+        </ul>
+      </li>
+      <li><a href="#pill-buttons" id="markdown-toc-pill-buttons">Pill buttons</a></li>
+      <li><a href="#blocks" id="markdown-toc-blocks">Blocks</a></li>
+      <li><a href="#text-ribbons" id="markdown-toc-text-ribbons">Text ribbons</a></li>
+      <li><a href="#transparent-navbar" id="markdown-toc-transparent-navbar">Transparent navbar</a></li>
+      <li><a href="#nav-bordered" id="markdown-toc-nav-bordered">Nav bordered</a></li>
+      <li><a href="#carousel-light" id="markdown-toc-carousel-light">Carousel Light</a></li>
+      <li><a href="#callouts" id="markdown-toc-callouts">Callouts</a></li>
+      <li><a href="#featured-lists" id="markdown-toc-featured-lists">Featured lists</a></li>
+      <li><a href="#pull-quotes" id="markdown-toc-pull-quotes">Pull Quotes</a></li>
+      <li><a href="#icon-list" id="markdown-toc-icon-list">Icon list</a></li>
+      <li><a href="#stat-cards" id="markdown-toc-stat-cards">Stat cards</a></li>
+    </ul>
+  </li>
+  <li><a href="#plugins" id="markdown-toc-plugins">Plugins</a>    <ul>
+      <li><a href="#zoom" id="markdown-toc-zoom">Zoom</a>        <ul>
+          <li><a href="#data-api" id="markdown-toc-data-api">Data API</a></li>
+        </ul>
+      </li>
+      <li><a href="#enter" id="markdown-toc-enter">Enter</a>        <ul>
+          <li><a href="#options" id="markdown-toc-options">Options</a></li>
+          <li><a href="#javascript-api" id="markdown-toc-javascript-api">JavaScript API</a></li>
+          <li><a href="#data-api-1" id="markdown-toc-data-api-1">Data API</a></li>
+        </ul>
+      </li>
+      <li><a href="#image-grids" id="markdown-toc-image-grids">Image grids</a>        <ul>
+          <li><a href="#options-1" id="markdown-toc-options-1">Options</a></li>
+          <li><a href="#javascript-api-1" id="markdown-toc-javascript-api-1">JavaScript API</a></li>
+          <li><a href="#data-api-2" id="markdown-toc-data-api-2">Data Api</a></li>
+        </ul>
+      </li>
+      <li><a href="#stage" id="markdown-toc-stage">Stage</a>        <ul>
+          <li><a href="#options-2" id="markdown-toc-options-2">Options</a></li>
+          <li><a href="#customizing" id="markdown-toc-customizing">Customizing</a></li>
+          <li><a href="#example" id="markdown-toc-example">Example</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="intro">Intro</h1>
+
+<p>Hey there! You’re looking at the docs for an Official Bootstrap Theme—thanks for your purchase! This theme has been lovingly crafted by Bootstrap’s founders and friends to help you build awesome projects on the web. Let’s dive in.</p>
+
+<p>Each theme is designed as it’s own toolkit—a series of well designed, intuitive, and cohesive components—built on top of Bootstrap. If you’ve used Bootstrap itself, you’ll find this all super familiar, but with new aesthetics, new components, beautiful and extensive examples, and easy-to-use build tools and documentation.</p>
+
+<p>Since this theme is based on Bootstrap, and includes nearly everything Bootstrap itself does, you’ll want to give the <a href="http://getbootstrap.com">official project documentation</a> a once over before continuing. There’s also <a href="../bootstrap/index.html">the kitchen sink</a>—a one-page view of all Bootstrap’s components restyled by this theme.</p>
+
+<p>For everything else, including compiling and using this Bootstrap theme, read through the docs below.</p>
+
+<p>Thanks, and enjoy!</p>
+
+<h1 id="whats-included">What’s included</h1>
+
+<p>Within your Bootstrap theme you’ll find the following directories and files, grouping common resources and providing both compiled and minified distribution files, as well as raw source files.</p>
+
+<figure class="db"><pre><code class="bvw" data-lang="bash">theme/
+  ├── v3
+  └── v4
+      ├── gulpfile.js
+      ├── package.json
+      ├── README.md
+      ├── docs/
+      ├── scss/
+      │   ├── bootstrap/
+      │   ├── custom/
+      │   ├── variables.scss
+      │   └── toolkit.scss
+      ├── js/
+      │   ├── bootstrap/
+      │   └── custom/
+      ├── fonts/
+      │   ├── bootstrap-entypo.eot
+      │   ├── bootstrap-entypo.svg
+      │   ├── bootstrap-entypo.ttf
+      │   ├── bootstrap-entypo.woff
+      │   └── bootstrap-entypo.woff2
+      └── dist/
+          ├── toolkit.css
+          ├── toolkit.css.map
+          ├── toolkit.min.css
+          ├── toolkit.min.css.map
+          ├── toolkit.js
+          └── toolkit.min.js</code></pre></figure>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>At the top level of your bootstrap theme you’ll find a directory for each major Bootstrap version that’s supported (currently both <code class="bvx">v3</code> and <code class="bvx">v4</code>). Within each directory you have all the relevant files for that version.</p>
+
+<p>To view your Bootstrap Theme documentation, simply find the docs directory and open index.html in your favorite browser.</p>
+
+<figure class="db"><pre><code class="bvw" data-lang="bash"><span class="bg">$ </span>open docs/index.html</code></pre></figure>
+
+<h2 id="gulpfilejs">Gulpfile.js</h2>
+
+<p>If you’re after more customization we’ve also included a custom <a href="http://gulpjs.com">Gulp</a> file, which can be used to quickly re-compile a theme’s CSS and JS. You’ll need to install both <a href="https://nodejs.org/en/download/">Node</a> and Gulp before using our included <code class="bvx">gulpfile.js</code>.</p>
+
+<p>Once node is installed, run the following npm command to install Gulp.</p>
+
+<figure class="db"><pre><code class="bvw" data-lang="bash"><span class="bg">$ </span>npm install gulp -g</code></pre></figure>
+
+<p>When you’re done, make sure you’ve installed the rest of the theme’s dependencies:</p>
+
+<figure class="db"><pre><code class="bvw" data-lang="bash"><span class="bg">$ </span>npm install</code></pre></figure>
+
+<p>Now, modify your source files and run <code class="bvx">gulp</code> to generate new local <code class="bvx">dist/</code> files automatically. <strong>Be aware that this replaces existing <code class="bvx">dist/</code> files</strong>, so proceed with caution.</p>
+
+<h2 id="theme-source-code">Theme source code</h2>
+
+<p>The <code class="bvx">scss/</code>, <code class="bvx">js/</code>, and <code class="bvx">fonts/</code> directories contain the source code for our CSS, JS, and icon fonts (respectively). Within the <code class="bvx">scss/</code> and <code class="bvx">js/</code> directories you’ll find two subdirectories:</p>
+
+<ul>
+  <li><code class="bvx">bootstrap/</code>, which contains the most recently released version of Bootstrap (v4.0.0-alpha.6).</li>
+  <li><code class="bvx">custom/</code>, which contains all of the custom components and overrides authored specifically for this theme.</li>
+</ul>
+
+<p>The <code class="bvx">dist/</code> folder includes everything above, built into single CSS and JS files that can easily be integrated into your project.</p>
+
+<p>The <code class="bvx">docs/</code> folder includes the source code for our documentation, as well as a handful of live examples.</p>
+
+<p>The remaining files not specifically mentioned above provide support for packages, license information, and development.</p>
+
+<h1 id="custom-builds">Custom builds</h1>
+
+<p>Leverage the included source files and <code class="bvx">gulpfile.js</code> to customize your Bootstrap Theme for your exact needs. Change variables, exclude components, and more.</p>
+
+<ul>
+  <li><code class="bvx">toolkit-*.scss</code> is the entry point for Sass files - to build your own custom build, simply modify your local custom files or edit the includes listed here. Note: some themes also rely on a shared <code class="bvx">components.scss</code> file, which you can find imported in your <code class="bvx">toolkit-*.scss</code>.</li>
+  <li><code class="bvx">variables.scss</code> is home to your theme’s variables. Note that your theme’s <code class="bvx">variables</code> file depends on and overrides an existing Bootstrap variable file (found in <code class="bvx">/scss/bootstrap/_variables.scss</code>).</li>
+</ul>
+
+<h1 id="basic-template">Basic template</h1>
+
+<p>The basic template is a guideline for how to structure your pages when building with a Bootstrap Theme. Included below are all the necessary bits for using the theme’s CSS and JS, as well as some friendly reminders.</p>
+
+<p>Copy the example below into a new HTML file to get started with it.</p>
+
+<figure class="db"><pre><code class="bvy" data-lang="html"><span class="ax">&lt;!DOCTYPE html&gt;</span>
+<span class="cb">&lt;html</span> <span class="br">lang=</span><span class="bq">"en"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;head&gt;</span>
+    <span class="as">&lt;!-- These meta tags come first. --&gt;</span>
+    <span class="cb">&lt;meta</span> <span class="br">charset=</span><span class="bq">"utf-8"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;meta</span> <span class="br">http-equiv=</span><span class="bq">"X-UA-Compatible"</span> <span class="br">content=</span><span class="bq">"IE=edge"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;meta</span> <span class="br">name=</span><span class="bq">"viewport"</span> <span class="br">content=</span><span class="bq">"width=device-width, initial-scale=1"</span><span class="cb">&gt;</span>
+
+    <span class="cb">&lt;title&gt;</span>Bootstrap Theme Example<span class="cb">&lt;/title&gt;</span>
+
+    <span class="as">&lt;!-- Include the CSS --&gt;</span>
+    <span class="cb">&lt;link</span> <span class="br">href=</span><span class="bq">"dist/toolkit.min.css"</span> <span class="br">rel=</span><span class="bq">"stylesheet"</span><span class="cb">&gt;</span>
+
+  <span class="cb">&lt;/head&gt;</span>
+  <span class="cb">&lt;body&gt;</span>
+    <span class="cb">&lt;h1&gt;</span>Hello, world!<span class="cb">&lt;/h1&gt;</span>
+
+    <span class="as">&lt;!-- Include jQuery (required) and the JS --&gt;</span>
+    <span class="cb">&lt;script </span><span class="br">src=</span><span class="bq">"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"</span><span class="cb">&gt;&lt;/script&gt;</span>
+    <span class="cb">&lt;script </span><span class="br">src=</span><span class="bq">"dist/toolkit.min.js"</span><span class="cb">&gt;&lt;/script&gt;</span>
+  <span class="cb">&lt;/body&gt;</span>
+<span class="cb">&lt;/html&gt;</span></code></pre></figure>
+
+<h1 id="new-components">New components</h1>
+
+<h2 id="entypo">Entypo</h2>
+
+<p><a href="http://entypo.com">Entypo</a> is an awesome, high quality set of icon glyphs made by <a href="http://www.danielbruce.se">Daniel Bruce</a>. We’ve replaced Bootstrap’s default icon font, <a href="http://glyphicons.com">Glyhpicons</a>, with the complete Entypo set and Entypo social extension.</p>
+
+<p>Simply use the new <code class="bvx">icon</code> class and an <code class="bvx">icon-{modifier}</code> on an inline element. See the examples below for more details.</p>
+
+<h3 id="available-icons">Available icons</h3>
+
+<p>Below are all the original and social icons from Entypo that you can choose from:</p>
+
+<div class="de">
+  <span class="a bax"></span>
+  <span class="a bay"></span>
+  <span class="a baz"></span>
+  <span class="a bba"></span>
+  <span class="a bbb"></span>
+  <span class="a bbe"></span>
+  <span class="a bbc"></span>
+  <span class="a bbd"></span>
+  <span class="a bbf"></span>
+  <span class="a bbg"></span>
+  <span class="a bbh"></span>
+  <span class="a bbi"></span>
+  <span class="a bbj"></span>
+  <span class="a bbk"></span>
+  <span class="a bbm"></span>
+  <span class="a bbn"></span>
+  <span class="a bbo"></span>
+  <span class="a bbp"></span>
+  <span class="a bbq"></span>
+  <span class="a bbr"></span>
+  <span class="a bbs"></span>
+  <span class="a bbt"></span>
+  <span class="a bby"></span>
+  <span class="a bbz"></span>
+  <span class="a bbu"></span>
+  <span class="a bbv"></span>
+  <span class="a bbw"></span>
+  <span class="a bbx"></span>
+  <span class="a bca"></span>
+  <span class="a bcb"></span>
+  <span class="a bcc"></span>
+  <span class="a bcd"></span>
+  <span class="a bce"></span>
+  <span class="a bcf"></span>
+  <span class="a bcg"></span>
+  <span class="a bch"></span>
+  <span class="a bcj"></span>
+  <span class="a bcl"></span>
+  <span class="a bcm"></span>
+  <span class="a bco"></span>
+  <span class="a bcp"></span>
+  <span class="a bcq"></span>
+  <span class="a bcr"></span>
+  <span class="a bcs"></span>
+  <span class="a bct"></span>
+  <span class="a bcu"></span>
+  <span class="a bcv"></span>
+  <span class="a bcw"></span>
+  <span class="a bcx"></span>
+  <span class="a bcy"></span>
+  <span class="a bcz"></span>
+  <span class="a bda"></span>
+  <span class="a bdb"></span>
+  <span class="a bdc"></span>
+  <span class="a bdd"></span>
+  <span class="a bde"></span>
+  <span class="a bdf"></span>
+  <span class="a bfj"></span>
+  <span class="a bdg"></span>
+  <span class="a bdh"></span>
+  <span class="a bdi"></span>
+  <span class="a bdj"></span>
+  <span class="a bdk"></span>
+  <span class="a bdr"></span>
+  <span class="a bdl"></span>
+  <span class="a bdm"></span>
+  <span class="a bdn"></span>
+  <span class="a bdo"></span>
+  <span class="a bdp"></span>
+  <span class="a bat"></span>
+  <span class="a bau"></span>
+  <span class="a bdq"></span>
+  <span class="a bds"></span>
+  <span class="a bdt"></span>
+  <span class="a bdu"></span>
+  <span class="a bdv"></span>
+  <span class="a bdw"></span>
+  <span class="a bdx"></span>
+  <span class="a bdy"></span>
+  <span class="a bdz"></span>
+  <span class="a bea"></span>
+  <span class="a beb"></span>
+  <span class="a bec"></span>
+  <span class="a bed"></span>
+  <span class="a bee"></span>
+  <span class="a bef"></span>
+  <span class="a beg"></span>
+  <span class="a beh"></span>
+  <span class="a bei"></span>
+  <span class="a bej"></span>
+  <span class="a bek"></span>
+  <span class="a bel"></span>
+  <span class="a bem"></span>
+  <span class="a ben"></span>
+  <span class="a beo"></span>
+  <span class="a bep"></span>
+  <span class="a beq"></span>
+  <span class="a ber"></span>
+  <span class="a bes"></span>
+  <span class="a bet"></span>
+  <span class="a bfd"></span>
+  <span class="a bev"></span>
+  <span class="a bew"></span>
+  <span class="a bex"></span>
+  <span class="a bey"></span>
+  <span class="a bez"></span>
+  <span class="a bfa"></span>
+  <span class="a bfb"></span>
+  <span class="a bfc"></span>
+  <span class="a bfe"></span>
+  <span class="a bff"></span>
+  <span class="a bfg"></span>
+  <span class="a bfh"></span>
+  <span class="a bfi"></span>
+  <span class="a bfk"></span>
+  <span class="a bfl"></span>
+  <span class="a bfm"></span>
+  <span class="a bfn"></span>
+  <span class="a bfp"></span>
+  <span class="a bfo"></span>
+  <span class="a bfq"></span>
+  <span class="a bfr"></span>
+  <span class="a bfu"></span>
+  <span class="a bfs"></span>
+  <span class="a bfv"></span>
+  <span class="a bft"></span>
+  <span class="a bfw"></span>
+  <span class="a bfz"></span>
+  <span class="a bga"></span>
+  <span class="a bgb"></span>
+  <span class="a bgd"></span>
+  <span class="a bge"></span>
+  <span class="a bgf"></span>
+  <span class="a bgg"></span>
+  <span class="a bgh"></span>
+  <span class="a bgi"></span>
+  <span class="a bgj"></span>
+  <span class="a bgk"></span>
+  <span class="a bgm"></span>
+  <span class="a bgo"></span>
+  <span class="a bgn"></span>
+  <span class="a bgr"></span>
+  <span class="a bgs"></span>
+  <span class="a bgt"></span>
+  <span class="a bgu"></span>
+  <span class="a bgv"></span>
+  <span class="a bgw"></span>
+  <span class="a bha"></span>
+  <span class="a bhb"></span>
+  <span class="a bhc"></span>
+  <span class="a bhd"></span>
+  <span class="a bhe"></span>
+  <span class="a bhf"></span>
+  <span class="a bhj"></span>
+  <span class="a bhg"></span>
+  <span class="a bhh"></span>
+  <span class="a bhi"></span>
+  <span class="a bhk"></span>
+  <span class="a bhm"></span>
+  <span class="a bhn"></span>
+  <span class="a bho"></span>
+  <span class="a bhr"></span>
+  <span class="a bhx"></span>
+  <span class="a bhy"></span>
+  <span class="a bia"></span>
+  <span class="a bib"></span>
+  <span class="a bid"></span>
+  <span class="a bic"></span>
+  <span class="a bif"></span>
+  <span class="a bie"></span>
+  <span class="a big"></span>
+  <span class="a bih"></span>
+  <span class="a bil"></span>
+  <span class="a bik"></span>
+  <span class="a bim"></span>
+  <span class="a bin"></span>
+  <span class="a bio"></span>
+  <span class="a biq"></span>
+  <span class="a bip"></span>
+  <span class="a bit"></span>
+  <span class="a biu"></span>
+  <span class="a biv"></span>
+  <span class="a biw"></span>
+  <span class="a bix"></span>
+  <span class="a biy"></span>
+  <span class="a biz"></span>
+  <span class="a bjc"></span>
+  <span class="a bjd"></span>
+  <span class="a bje"></span>
+  <span class="a bjf"></span>
+  <span class="a bjg"></span>
+  <span class="a bjh"></span>
+  <span class="a bji"></span>
+  <span class="a bjj"></span>
+  <span class="a bjk"></span>
+  <span class="a bjl"></span>
+  <span class="a bjo"></span>
+  <span class="a bjp"></span>
+  <span class="a bjq"></span>
+  <span class="a bjs"></span>
+  <span class="a bjr"></span>
+  <span class="a bju"></span>
+  <span class="a bjt"></span>
+  <span class="a bjv"></span>
+  <span class="a bjw"></span>
+  <span class="a bjx"></span>
+  <span class="a bjz"></span>
+  <span class="a bka"></span>
+  <span class="a bkb"></span>
+  <span class="a bkc"></span>
+  <span class="a bkd"></span>
+  <span class="a bkg"></span>
+  <span class="a bki"></span>
+  <span class="a bkj"></span>
+  <span class="a bkk"></span>
+  <span class="a bkl"></span>
+  <span class="a bkm"></span>
+  <span class="a bko"></span>
+  <span class="a bkp"></span>
+  <span class="a bkq"></span>
+  <span class="a bkr"></span>
+  <span class="a bks"></span>
+  <span class="a bkt"></span>
+  <span class="a bku"></span>
+  <span class="a bkv"></span>
+  <span class="a bkw"></span>
+  <span class="a bkx"></span>
+  <span class="a bky"></span>
+  <span class="a bkz"></span>
+  <span class="a bla"></span>
+  <span class="a blb"></span>
+  <span class="a blc"></span>
+  <span class="a bld"></span>
+  <span class="a blf"></span>
+  <span class="a blg"></span>
+  <span class="a blh"></span>
+  <span class="a blj"></span>
+  <span class="a blk"></span>
+  <span class="a blm"></span>
+  <span class="a bln"></span>
+  <span class="a blq"></span>
+  <span class="a blr"></span>
+  <span class="a bls"></span>
+  <span class="a blt"></span>
+  <span class="a blu"></span>
+  <span class="a blv"></span>
+  <span class="a blw"></span>
+  <span class="a bly"></span>
+  <span class="a blz"></span>
+  <span class="a blx"></span>
+  <span class="a bma"></span>
+  <span class="a bmd"></span>
+  <span class="a bme"></span>
+  <span class="a bmh"></span>
+  <span class="a bmk"></span>
+  <span class="a bmm"></span>
+  <span class="a bmn"></span>
+  <span class="a bmo"></span>
+  <span class="a bmp"></span>
+  <span class="a bmq"></span>
+  <span class="a bmr"></span>
+  <span class="a bms"></span>
+  <span class="a bmt"></span>
+  <span class="a bmu"></span>
+  <span class="a bmv"></span>
+  <span class="a bmw"></span>
+  <span class="a bmy"></span>
+  <span class="a bmz"></span>
+  <span class="a bnb"></span>
+  <span class="a bnc"></span>
+  <span class="a bnd"></span>
+  <span class="a bne"></span>
+  <span class="a bnf"></span>
+  <span class="a bng"></span>
+  <span class="a bnh"></span>
+  <span class="a bni"></span>
+  <span class="a bnj"></span>
+  <span class="a bnp"></span>
+  <span class="a bnr"></span>
+  <span class="a bnq"></span>
+  <span class="a bnt"></span>
+  <span class="a bnw"></span>
+  <span class="a bnx"></span>
+  <span class="a bny"></span>
+  <span class="a bnz"></span>
+  <span class="a bob"></span>
+  <span class="a boa"></span>
+  <span class="a boc"></span>
+  <span class="a bof"></span>
+  <span class="a bog"></span>
+  <span class="a boi"></span>
+  <span class="a boj"></span>
+  <span class="a bol"></span>
+  <span class="a bok"></span>
+  <span class="a bom"></span>
+  <span class="a bpo"></span>
+  <span class="a boo"></span>
+  <span class="a bon"></span>
+  <span class="a bop"></span>
+  <span class="a boq"></span>
+  <span class="a bos"></span>
+  <span class="a bor"></span>
+  <span class="a bot"></span>
+  <span class="a bou"></span>
+  <span class="a bov"></span>
+  <span class="a bow"></span>
+  <span class="a box"></span>
+  <span class="a boy"></span>
+  <span class="a boz"></span>
+  <span class="a bpa"></span>
+  <span class="a bpb"></span>
+  <span class="a bpc"></span>
+  <span class="a bpd"></span>
+  <span class="a bpf"></span>
+  <span class="a bpi"></span>
+  <span class="a bpl"></span>
+  <span class="a bpm"></span>
+  <span class="a bpn"></span>
+  <span class="a bpp"></span>
+  <span class="a bpq"></span>
+  <span class="a bpr"></span>
+  <span class="a bps"></span>
+  <span class="a bpt"></span>
+  <span class="a bpu"></span>
+  <span class="a bpv"></span>
+  <span class="a bqa"></span>
+  <span class="a bqe"></span>
+  <span class="a bqf"></span>
+  <span class="a bqg"></span>
+  <span class="a bqh"></span>
+</div>
+
+<div class="de">
+  <span class="a baw"></span>
+  <span class="a bav"></span>
+  <span class="a bbl"></span>
+  <span class="a bci"></span>
+  <span class="a bck"></span>
+  <span class="a bcn"></span>
+  <span class="a beu"></span>
+  <span class="a bfy"></span>
+  <span class="a bfx"></span>
+  <span class="a bgc"></span>
+  <span class="a bgl"></span>
+  <span class="a bgq"></span>
+  <span class="a bgp"></span>
+  <span class="a bgx"></span>
+  <span class="a bgz"></span>
+  <span class="a bgy"></span>
+  <span class="a bhl"></span>
+  <span class="a bhq"></span>
+  <span class="a bhp"></span>
+  <span class="a bhu"></span>
+  <span class="a bhv"></span>
+  <span class="a bhw"></span>
+  <span class="a bht"></span>
+  <span class="a bhs"></span>
+  <span class="a bhz"></span>
+  <span class="a bii"></span>
+  <span class="a bij"></span>
+  <span class="a bis"></span>
+  <span class="a bir"></span>
+  <span class="a bjb"></span>
+  <span class="a bja"></span>
+  <span class="a bjn"></span>
+  <span class="a bjm"></span>
+  <span class="a bjy"></span>
+  <span class="a bkf"></span>
+  <span class="a bke"></span>
+  <span class="a bkn"></span>
+  <span class="a ble"></span>
+  <span class="a bli"></span>
+  <span class="a bll"></span>
+  <span class="a blp"></span>
+  <span class="a blo"></span>
+  <span class="a bmc"></span>
+  <span class="a bmb"></span>
+  <span class="a bmg"></span>
+  <span class="a bmf"></span>
+  <span class="a bmj"></span>
+  <span class="a bmi"></span>
+  <span class="a bml"></span>
+  <span class="a bmx"></span>
+  <span class="a bnk"></span>
+  <span class="a bnm"></span>
+  <span class="a bnl"></span>
+  <span class="a bnn"></span>
+  <span class="a bno"></span>
+  <span class="a bns"></span>
+  <span class="a bnv"></span>
+  <span class="a bnu"></span>
+  <span class="a boe"></span>
+  <span class="a bod"></span>
+  <span class="a boh"></span>
+  <span class="a bpe"></span>
+  <span class="a bph"></span>
+  <span class="a bpg"></span>
+  <span class="a bpk"></span>
+  <span class="a bpj"></span>
+  <span class="a bpx"></span>
+  <span class="a bpw"></span>
+  <span class="a bpz"></span>
+  <span class="a bpy"></span>
+  <span class="a bqd"></span>
+  <span class="a bqc"></span>
+  <span class="a bqb"></span>
+  <span class="a bqi"></span>
+  <span class="a bqk"></span>
+  <span class="a bqj"></span>
+  <span class="a bql"></span>
+  <span class="a bqn"></span>
+  <span class="a bqm"></span>
+  <span class="a bqp"></span>
+  <span class="a bqo"></span>
+</div>
+
+<h3 id="examples">Examples</h3>
+
+<p>Entypo icons can be placed in just about any other element, so long as they are a separate HTML element (e.g., a <code class="bvx">&lt;span&gt;</code>). See the examples below for how to put them to use.</p>
+
+<div class="dc" data-example-id="">
+<button class="dm qs" type="button">
+  <span class="a bos"></span>
+  Like
+</button>
+<button class="dm qq" type="button">
+  <span class="a bos"></span>
+  Liked!
+</button>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-secondary"</span> <span class="br">type=</span><span class="bq">"button"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-thumbs-up"</span><span class="cb">&gt;&lt;/span&gt;</span>
+  Like
+<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-primary"</span> <span class="br">type=</span><span class="bq">"button"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-thumbs-up"</span><span class="cb">&gt;&lt;/span&gt;</span>
+  Liked!
+<span class="cb">&lt;/button&gt;</span></code></pre></div>
+
+<div class="dc" data-example-id="">
+<ul class="nav sd">
+  <li class="m active">
+    <a class="sb" href="#">
+      <span class="a bdg"></span>
+      Discussions
+    </a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">
+      <span class="a bco"></span>
+      Notifications
+    </a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">
+      <span class="a bps"></span>
+      Members
+    </a>
+  </li>
+</ul>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;ul</span> <span class="br">class=</span><span class="bq">"nav nav-pills"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item active"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-chat"</span><span class="cb">&gt;&lt;/span&gt;</span>
+      Discussions
+    <span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-bell"</span><span class="cb">&gt;&lt;/span&gt;</span>
+      Notifications
+    <span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-users"</span><span class="cb">&gt;&lt;/span&gt;</span>
+      Members
+    <span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+<span class="cb">&lt;/ul&gt;</span></code></pre></div>
+
+<h2 id="pill-buttons">Pill buttons</h2>
+
+<p>Add <code class="bvx">.btn-pill</code> to any button to make them more rounded.</p>
+
+<div class="dc" data-example-id="">
+<button type="button" class="dm ap bqs qq">Primary</button>
+<button type="button" class="dm ap bqs qs">Secondary</button>
+<button type="button" class="dm ap bqs qu">Success</button>
+<button type="button" class="dm ap bqs qt">Info</button>
+<button type="button" class="dm ap bqs qv">Warning</button>
+<button type="button" class="dm ap bqs qw">Danger</button>
+<button type="button" class="dm ap bqs rd">Link</button>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-lg btn-pill btn-primary"</span><span class="cb">&gt;</span>Primary<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-lg btn-pill btn-secondary"</span><span class="cb">&gt;</span>Secondary<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-lg btn-pill btn-success"</span><span class="cb">&gt;</span>Success<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-lg btn-pill btn-info"</span><span class="cb">&gt;</span>Info<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-lg btn-pill btn-warning"</span><span class="cb">&gt;</span>Warning<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-lg btn-pill btn-danger"</span><span class="cb">&gt;</span>Danger<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-lg btn-pill btn-link"</span><span class="cb">&gt;</span>Link<span class="cb">&lt;/button&gt;</span></code></pre></div>
+
+<div class="dc" data-example-id="">
+<button type="button" class="dm bqs qq">Primary</button>
+<button type="button" class="dm bqs qs">Secondary</button>
+<button type="button" class="dm bqs qu">Success</button>
+<button type="button" class="dm bqs qt">Info</button>
+<button type="button" class="dm bqs qv">Warning</button>
+<button type="button" class="dm bqs qw">Danger</button>
+<button type="button" class="dm bqs rd">Link</button>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-pill btn-primary"</span><span class="cb">&gt;</span>Primary<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-pill btn-secondary"</span><span class="cb">&gt;</span>Secondary<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-pill btn-success"</span><span class="cb">&gt;</span>Success<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-pill btn-info"</span><span class="cb">&gt;</span>Info<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-pill btn-warning"</span><span class="cb">&gt;</span>Warning<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-pill btn-danger"</span><span class="cb">&gt;</span>Danger<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-pill btn-link"</span><span class="cb">&gt;</span>Link<span class="cb">&lt;/button&gt;</span></code></pre></div>
+
+<div class="dc" data-example-id="">
+<button type="button" class="dm rf bqs qq">Primary</button>
+<button type="button" class="dm rf bqs qs">Secondary</button>
+<button type="button" class="dm rf bqs qu">Success</button>
+<button type="button" class="dm rf bqs qt">Info</button>
+<button type="button" class="dm rf bqs qv">Warning</button>
+<button type="button" class="dm rf bqs qw">Danger</button>
+<button type="button" class="dm rf bqs rd">Link</button>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-sm btn-pill btn-primary"</span><span class="cb">&gt;</span>Primary<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-sm btn-pill btn-secondary"</span><span class="cb">&gt;</span>Secondary<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-sm btn-pill btn-success"</span><span class="cb">&gt;</span>Success<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-sm btn-pill btn-info"</span><span class="cb">&gt;</span>Info<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-sm btn-pill btn-warning"</span><span class="cb">&gt;</span>Warning<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-sm btn-pill btn-danger"</span><span class="cb">&gt;</span>Danger<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-sm btn-pill btn-link"</span><span class="cb">&gt;</span>Link<span class="cb">&lt;/button&gt;</span></code></pre></div>
+
+<div class="dc" data-example-id="">
+<button type="button" class="dm bad bqs qq">Primary</button>
+<button type="button" class="dm bad bqs qs">Default</button>
+<button type="button" class="dm bad bqs qu">Success</button>
+<button type="button" class="dm bad bqs qt">Info</button>
+<button type="button" class="dm bad bqs qv">Warning</button>
+<button type="button" class="dm bad bqs qw">Danger</button>
+<button type="button" class="dm bad bqs rd">Link</button>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-xs btn-pill btn-primary"</span><span class="cb">&gt;</span>Primary<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-xs btn-pill btn-secondary"</span><span class="cb">&gt;</span>Default<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-xs btn-pill btn-success"</span><span class="cb">&gt;</span>Success<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-xs btn-pill btn-info"</span><span class="cb">&gt;</span>Info<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-xs btn-pill btn-warning"</span><span class="cb">&gt;</span>Warning<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-xs btn-pill btn-danger"</span><span class="cb">&gt;</span>Danger<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;button</span> <span class="br">type=</span><span class="bq">"button"</span> <span class="br">class=</span><span class="bq">"btn btn-xs btn-pill btn-link"</span><span class="cb">&gt;</span>Link<span class="cb">&lt;/button&gt;</span></code></pre></div>
+
+<h2 id="blocks">Blocks</h2>
+
+<p>Blocks are a brand new composing metaphor exclusively for use with our Marketing toolkit. Build your site up by stacking several blocks on top of each other to provide focused, attention grabbing units of content.</p>
+
+<div class="dc" data-example-id="">
+<div class="k ayf">
+  <h1 class="brl">A basic block</h1>
+  <h4 class="an">Use these to package stackable, image driven content.</h4>
+  <button class="dm qq agv">With a simple button</button>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block text-center"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h1</span> <span class="br">class=</span><span class="bq">"block-title"</span><span class="cb">&gt;</span>A basic block<span class="cb">&lt;/h1&gt;</span>
+  <span class="cb">&lt;h4</span> <span class="br">class=</span><span class="bq">"text-muted"</span><span class="cb">&gt;</span>Use these to package stackable, image driven content.<span class="cb">&lt;/h4&gt;</span>
+  <span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-primary mt-1"</span><span class="cb">&gt;</span>With a simple button<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<p>We have several basic block types, including an inverse block.</p>
+
+<div class="dc" data-example-id="">
+<div class="k am ayf">
+  <h1 class="brl">An inverse block</h1>
+  <h4 class="an">Use the inverse modifier for working over dark images.</h4>
+  <button class="dm qq agv">With a simple button</button>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block block-inverse text-center"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h1</span> <span class="br">class=</span><span class="bq">"block-title"</span><span class="cb">&gt;</span>An inverse block<span class="cb">&lt;/h1&gt;</span>
+  <span class="cb">&lt;h4</span> <span class="br">class=</span><span class="bq">"text-muted"</span><span class="cb">&gt;</span>Use the inverse modifier for working over dark images.<span class="cb">&lt;/h4&gt;</span>
+  <span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-primary mt-1"</span><span class="cb">&gt;</span>With a simple button<span class="cb">&lt;/button&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<p>We’ve also made it easy to integrate embeded content for more interactive block backgrounds.</p>
+
+<div class="dc" data-example-id="">
+<div class="k am ayf">
+  <div class="bri">
+    <h1 class="brl">An embed block</h1>
+    <h4 class="an">Use block-background to integrate interactive backgrounds.</h4>
+    <button class="dm qs qy agv">With a simple button</button>
+  </div>
+  <div class="brh">
+    <iframe frameborder="0" src="https://a.tiles.mapbox.com/v4/jacobthornton.6681fb42/attribution.html?access_token=pk.eyJ1IjoiamFjb2J0aG9ybnRvbiIsImEiOiJlMGRmZmJlNDZkNDhlN2EzMTQ0YWFiNjhlN2RiZWY1ZCJ9.hO-UNIIplnebJYkya-8TEQ"></iframe>
+  </div>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block block-inverse text-center"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block-foreground"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;h1</span> <span class="br">class=</span><span class="bq">"block-title"</span><span class="cb">&gt;</span>An embed block<span class="cb">&lt;/h1&gt;</span>
+    <span class="cb">&lt;h4</span> <span class="br">class=</span><span class="bq">"text-muted"</span><span class="cb">&gt;</span>Use block-background to integrate interactive backgrounds.<span class="cb">&lt;/h4&gt;</span>
+    <span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-secondary btn-outline-secondary mt-1"</span><span class="cb">&gt;</span>With a simple button<span class="cb">&lt;/button&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block-background"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;iframe</span> <span class="br">frameBorder=</span><span class="bq">"0"</span> <span class="br">src=</span><span class="bq">"https://a.tiles.mapbox.com/v4/jacobthornton.6681fb42/attribution.html?access_token=pk.eyJ1IjoiamFjb2J0aG9ybnRvbiIsImEiOiJlMGRmZmJlNDZkNDhlN2EzMTQ0YWFiNjhlN2RiZWY1ZCJ9.hO-UNIIplnebJYkya-8TEQ"</span><span class="cb">&gt;&lt;/iframe&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<p>Use different modifiers like <code class="bvx">block-bordered</code> and <code class="bvx">block-angle</code> to experiment with different visual treatments and flows between your blocks.</p>
+
+<div class="dc" data-example-id="">
+<div class="k ayf">
+  <div class="ex">
+    <h4 class="ahs">
+      Join over 900,000 designers already using Bootstrap. Get Bootstrap <strong>free</strong> forever!
+    </h4>
+    <form class="qm xx zr">
+      <input class="form-control ahl" placeholder="email address" />
+      <input class="form-control ahl agz" type="password" placeholder="Create a Password" />
+      <button class="dm qq ahl">Get started - free forever</button>
+    </form>
+    <small class="an">
+      By clicking "get started – free Forever!" I agree to Bootstraps
+      <a href="#">Terms of service</a>
+    </small>
+  </div>
+</div>
+<div class="k brd ayf">
+  <div class="ex">
+   <blockquote class="btc">
+      <p>
+        “Notice that simple inset border above. Isn't it lovely.”
+      </p>
+      <cite>Mark Otto, Huge Nerd</cite>
+    </blockquote>
+  </div>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block text-center"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"container-fluid"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;h4</span> <span class="br">class=</span><span class="bq">"mb-4"</span><span class="cb">&gt;</span>
+      Join over 900,000 designers already using Bootstrap. Get Bootstrap <span class="cb">&lt;strong&gt;</span>free<span class="cb">&lt;/strong&gt;</span> forever!
+    <span class="cb">&lt;/h4&gt;</span>
+    <span class="cb">&lt;form</span> <span class="br">class=</span><span class="bq">"form-inline d-flex justify-content-center"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;input</span> <span class="br">class=</span><span class="bq">"form-control mb-3"</span> <span class="br">placeholder=</span><span class="bq">"email address"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;input</span> <span class="br">class=</span><span class="bq">"form-control mb-3 mx-1"</span> <span class="br">type=</span><span class="bq">"password"</span> <span class="br">placeholder=</span><span class="bq">"Create a Password"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-primary mb-3"</span><span class="cb">&gt;</span>Get started - free forever<span class="cb">&lt;/button&gt;</span>
+    <span class="cb">&lt;/form&gt;</span>
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"text-muted"</span><span class="cb">&gt;</span>
+      By clicking "get started – free Forever!" I agree to Bootstraps
+      <span class="cb">&lt;a</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Terms of service<span class="cb">&lt;/a&gt;</span>
+    <span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block block-bordered text-center"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"container-fluid"</span><span class="cb">&gt;</span>
+   <span class="cb">&lt;blockquote</span> <span class="br">class=</span><span class="bq">"pull-quote"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;p&gt;</span>
+        “Notice that simple inset border above. Isn't it lovely.”
+      <span class="cb">&lt;/p&gt;</span>
+      <span class="cb">&lt;cite&gt;</span>Mark Otto, Huge Nerd<span class="cb">&lt;/cite&gt;</span>
+    <span class="cb">&lt;/blockquote&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<p>Use the <code class="bvx">block-fill-height</code> modifier to make your block fill a user’s screen, and then use the responsive alignment classes like <code class="bvx">block-xs-middle</code> or <code class="bvx">block-md-bottom</code> to align your content within the block.</p>
+
+<div class="dc" data-example-id="">
+<div class="k brj ayf">
+  <div class="bro">
+    <div class="ex">
+     <blockquote class="btc">
+        <p>
+          “Started at the bottom… etc”
+        </p>
+        <cite>Drake, OVO</cite>
+      </blockquote>
+    </div>
+  </div>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block block-fill-height text-center"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"block-xs-bottom"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"container-fluid"</span><span class="cb">&gt;</span>
+     <span class="cb">&lt;blockquote</span> <span class="br">class=</span><span class="bq">"pull-quote"</span><span class="cb">&gt;</span>
+        <span class="cb">&lt;p&gt;</span>
+          “Started at the bottom… etc”
+        <span class="cb">&lt;/p&gt;</span>
+        <span class="cb">&lt;cite&gt;</span>Drake, OVO<span class="cb">&lt;/cite&gt;</span>
+      <span class="cb">&lt;/blockquote&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="text-ribbons">Text ribbons</h2>
+
+<p>Create culti-line, inline ribbons on your text. Useful for breaking up content and adding strong visual flourishes.</p>
+
+<div class="dc" data-example-id="">
+<h2 class="ago">
+  <strong class="dq bsk">
+    <span>Gucci Flip flops</span>
+  </strong>
+</h2>
+<p class="ahq">
+  <span class="dq bsk">
+    <span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</span>
+  </span>
+</p>
+
+<h2 class="ahx">
+  <strong class="dq bsl">
+    <span>Gucci Flip flops</span>
+  </strong>
+</h2>
+<p class="ahq">
+  <span class="dq bsl">
+    <span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</span>
+  </span>
+</p>
+
+<h2 class="ahx">
+  <strong class="dq bso">
+    <span>Gucci Flip flops</span>
+  </strong>
+</h2>
+<p class="ahq">
+  <span class="dq bso">
+    <span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</span>
+  </span>
+</p>
+
+<h2 class="ahx">
+  <strong class="dq bsm">
+    <span>Gucci Flip flops</span>
+  </strong>
+</h2>
+<p class="ahq">
+  <span class="dq bsm">
+    <span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</span>
+  </span>
+</p>
+
+<h2 class="ahx">
+  <strong class="dq bsn">
+    <span>Gucci Flip flops</span>
+  </strong>
+</h2>
+<p class="ahq">
+  <span class="dq bsn">
+    <span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</span>
+  </span>
+</p>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;h2</span> <span class="br">class=</span><span class="bq">"mt-0"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;strong</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-primary"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Gucci Flip flops<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/strong&gt;</span>
+<span class="cb">&lt;/h2&gt;</span>
+<span class="cb">&lt;p</span> <span class="br">class=</span><span class="bq">"mt-4"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-primary"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/p&gt;</span>
+
+<span class="cb">&lt;h2</span> <span class="br">class=</span><span class="bq">"mt-5"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;strong</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-success"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Gucci Flip flops<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/strong&gt;</span>
+<span class="cb">&lt;/h2&gt;</span>
+<span class="cb">&lt;p</span> <span class="br">class=</span><span class="bq">"mt-4"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-success"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/p&gt;</span>
+
+<span class="cb">&lt;h2</span> <span class="br">class=</span><span class="bq">"mt-5"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;strong</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-info"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Gucci Flip flops<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/strong&gt;</span>
+<span class="cb">&lt;/h2&gt;</span>
+<span class="cb">&lt;p</span> <span class="br">class=</span><span class="bq">"mt-4"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-info"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/p&gt;</span>
+
+<span class="cb">&lt;h2</span> <span class="br">class=</span><span class="bq">"mt-5"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;strong</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-warning"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Gucci Flip flops<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/strong&gt;</span>
+<span class="cb">&lt;/h2&gt;</span>
+<span class="cb">&lt;p</span> <span class="br">class=</span><span class="bq">"mt-4"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-warning"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/p&gt;</span>
+
+<span class="cb">&lt;h2</span> <span class="br">class=</span><span class="bq">"mt-5"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;strong</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-danger"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Gucci Flip flops<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/strong&gt;</span>
+<span class="cb">&lt;/h2&gt;</span>
+<span class="cb">&lt;p</span> <span class="br">class=</span><span class="bq">"mt-4"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"text-ribbon text-ribbon-danger"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span&gt;</span>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/p&gt;</span></code></pre></div>
+
+<h2 id="transparent-navbar">Transparent navbar</h2>
+
+<p>Use the new <code class="bvx">.navbar-transparent</code> variation for placing navbars over backgrounds and interactive content.</p>
+
+<div class="dc" data-example-id="">
+<div class="ajs aip" style="background: url(../assets/img/kanye.jpg) top center; background-size: cover">
+
+  <nav class="du brz bap sp">
+    <button class="sj sm azl" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="sk"></span>
+    </button>
+
+    <a class="l" href="#">
+      <h4 class="ayt agt">Project Name</h4>
+    </a>
+
+    <div class="collapse so" id="navbarResponsive">
+      <ul class="nav navbar-nav ajx">
+        <li class="m">
+          <a class="sb" href="#">Home</a>
+        </li>
+        <li class="m">
+          <a class="sb" href="#">About</a>
+        </li>
+        <li class="m">
+          <a class="sb" href="#">Contact</a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </nav>
+
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"py-5 px-1"</span> <span class="br">style=</span><span class="bq">"background: url(../assets/img/kanye.jpg) top center; background-size: cover"</span><span class="cb">&gt;</span>
+
+  <span class="cb">&lt;nav</span> <span class="br">class=</span><span class="bq">"navbar navbar-transparent navbar-padded navbar-toggleable-sm"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;button</span>
+      <span class="br">class=</span><span class="bq">"navbar-toggler navbar-toggler-right hidden-md-up"</span>
+      <span class="br">type=</span><span class="bq">"button"</span>
+      <span class="br">data-toggle=</span><span class="bq">"collapse"</span>
+      <span class="br">data-target=</span><span class="bq">"#navbarResponsive"</span>
+      <span class="br">aria-controls=</span><span class="bq">"navbarResponsive"</span>
+      <span class="br">aria-expanded=</span><span class="bq">"false"</span>
+      <span class="br">aria-label=</span><span class="bq">"Toggle navigation"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"navbar-toggler-icon"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    <span class="cb">&lt;/button&gt;</span>
+
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"navbar-brand"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;h4</span> <span class="br">class=</span><span class="bq">"text-uppercase my-0"</span><span class="cb">&gt;</span>Project Name<span class="cb">&lt;/h4&gt;</span>
+    <span class="cb">&lt;/a&gt;</span>
+
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"collapse navbar-collapse"</span> <span class="br">id=</span><span class="bq">"navbarResponsive"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;ul</span> <span class="br">class=</span><span class="bq">"nav navbar-nav ml-auto"</span><span class="cb">&gt;</span>
+        <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+          <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Home<span class="cb">&lt;/a&gt;</span>
+        <span class="cb">&lt;/li&gt;</span>
+        <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+          <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>About<span class="cb">&lt;/a&gt;</span>
+        <span class="cb">&lt;/li&gt;</span>
+        <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+          <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Contact<span class="cb">&lt;/a&gt;</span>
+        <span class="cb">&lt;/li&gt;</span>
+      <span class="cb">&lt;/ul&gt;</span>
+    <span class="cb">&lt;/div&gt;</span><span class="as">&lt;!--/.nav-collapse --&gt;</span>
+  <span class="cb">&lt;/nav&gt;</span>
+
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="nav-bordered">Nav bordered</h2>
+
+<p>The bordered nav builds on Bootstrap’s <code class="bvx">.nav</code> base styles with a new, bolder variation to nav links.</p>
+
+<div class="dc" data-example-id="">
+<ul class="nav bqr">
+  <li class="m">
+    <a class="sb active" href="#">Bold</a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">Minimal</a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">Components</a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">Docs</a>
+  </li>
+</ul>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;ul</span> <span class="br">class=</span><span class="bq">"nav nav-bordered"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link active"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Bold<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Minimal<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Components<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Docs<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+<span class="cb">&lt;/ul&gt;</span></code></pre></div>
+
+<p>Bordered nav links can also be stacked:</p>
+
+<div class="dc" data-example-id="">
+<ul class="nav bqr nav-stacked zj">
+  <li class="baj">Examples</li>
+  <li class="m">
+    <a class="sb active" href="#">Bold</a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">Minimal</a>
+  </li>
+  
+  <li class="baj">Sections</li>
+
+  <li class="m">
+    <a class="sb" href="#">Grid</a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">Pricing</a>
+  </li>
+  <li class="m">
+    <a class="sb" href="#">About</a>
+  </li>
+</ul>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;ul</span> <span class="br">class=</span><span class="bq">"nav nav-bordered nav-stacked flex-column"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-header"</span><span class="cb">&gt;</span>Examples<span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link active"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Bold<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Minimal<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-header"</span><span class="cb">&gt;</span>Sections<span class="cb">&lt;/li&gt;</span>
+
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Grid<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>Pricing<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"nav-item"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"nav-link"</span> <span class="br">href=</span><span class="bq">"#"</span><span class="cb">&gt;</span>About<span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;/li&gt;</span>
+<span class="cb">&lt;/ul&gt;</span></code></pre></div>
+
+<h2 id="carousel-light">Carousel Light</h2>
+
+<p>The light carousel is a modified version of Bootstrap’s default carousel, using lighter styles on all carousel controls.</p>
+
+<div class="dc" data-example-id="">
+<div id="carousel-example-generic-2" class="carousel ds slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic-2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic-2" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic-2" data-slide-to="2"></li>
+  </ol>
+  <div class="wg" role="listbox">
+    <div class="wh active">
+      <img class="xu er" src="http://placehold.it/1140x500/fff/333" alt="First slide" />
+    </div>
+    <div class="wh">
+      <img class="xu er" src="http://placehold.it/1140x500/fff/333" alt="Second slide" />
+    </div>
+    <div class="wh">
+      <img class="xu er" src="http://placehold.it/1140x500/fff/333" alt="Third slide" />
+    </div>
+  </div>
+  <a class="wm" href="#carousel-example-generic-2" role="button" data-slide="prev">
+    <span class="a bat" aria-hidden="true"></span>
+    <span class="agb">Previous</span>
+  </a>
+  <a class="wn" href="#carousel-example-generic-2" role="button" data-slide="next">
+    <span class="a bau" aria-hidden="true"></span>
+    <span class="agb">Next</span>
+  </a>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">id=</span><span class="bq">"carousel-example-generic-2"</span> <span class="br">class=</span><span class="bq">"carousel carousel-light slide"</span> <span class="br">data-ride=</span><span class="bq">"carousel"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;ol</span> <span class="br">class=</span><span class="bq">"carousel-indicators"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;li</span> <span class="br">data-target=</span><span class="bq">"#carousel-example-generic-2"</span> <span class="br">data-slide-to=</span><span class="bq">"0"</span> <span class="br">class=</span><span class="bq">"active"</span><span class="cb">&gt;&lt;/li&gt;</span>
+    <span class="cb">&lt;li</span> <span class="br">data-target=</span><span class="bq">"#carousel-example-generic-2"</span> <span class="br">data-slide-to=</span><span class="bq">"1"</span><span class="cb">&gt;&lt;/li&gt;</span>
+    <span class="cb">&lt;li</span> <span class="br">data-target=</span><span class="bq">"#carousel-example-generic-2"</span> <span class="br">data-slide-to=</span><span class="bq">"2"</span><span class="cb">&gt;&lt;/li&gt;</span>
+  <span class="cb">&lt;/ol&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"carousel-inner"</span> <span class="br">role=</span><span class="bq">"listbox"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"carousel-item active"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;img</span> <span class="br">class=</span><span class="bq">"d-block img-fluid"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/1140x500/fff/333"</span> <span class="br">alt=</span><span class="bq">"First slide"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"carousel-item"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;img</span> <span class="br">class=</span><span class="bq">"d-block img-fluid"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/1140x500/fff/333"</span> <span class="br">alt=</span><span class="bq">"Second slide"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"carousel-item"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;img</span> <span class="br">class=</span><span class="bq">"d-block img-fluid"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/1140x500/fff/333"</span> <span class="br">alt=</span><span class="bq">"Third slide"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"carousel-control-prev"</span> <span class="br">href=</span><span class="bq">"#carousel-example-generic-2"</span> <span class="br">role=</span><span class="bq">"button"</span> <span class="br">data-slide=</span><span class="bq">"prev"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-chevron-thin-left"</span> <span class="br">aria-hidden=</span><span class="bq">"true"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"sr-only"</span><span class="cb">&gt;</span>Previous<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/a&gt;</span>
+  <span class="cb">&lt;a</span> <span class="br">class=</span><span class="bq">"carousel-control-next"</span> <span class="br">href=</span><span class="bq">"#carousel-example-generic-2"</span> <span class="br">role=</span><span class="bq">"button"</span> <span class="br">data-slide=</span><span class="bq">"next"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-chevron-thin-right"</span> <span class="br">aria-hidden=</span><span class="bq">"true"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"sr-only"</span><span class="cb">&gt;</span>Next<span class="cb">&lt;/span&gt;</span>
+  <span class="cb">&lt;/a&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="callouts">Callouts</h2>
+
+<p>Use callouts to quickly draw attention to specific actions with an extended explanation.</p>
+
+<div class="dc" data-example-id="">
+<div class="bsc">
+  <div class="bsd">
+    <strong>Explore this thing.</strong> Learn more about this thing.
+  </div>
+
+  <div class="bse">
+    <button class="dm qq">Get started</button>
+  </div>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"callout"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"callout-content"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;strong&gt;</span>Explore this thing.<span class="cb">&lt;/strong&gt;</span> Learn more about this thing.
+  <span class="cb">&lt;/div&gt;</span>
+
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"callout-secondary"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-primary"</span><span class="cb">&gt;</span>Get started<span class="cb">&lt;/button&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="featured-lists">Featured lists</h2>
+
+<p>Featured lists are common marketing components used for associating visual icons with a list of topics.</p>
+
+<div class="dc" data-example-id="">
+<div class="ex">
+  <div class="c ahv">
+    <div class="fr">
+      <ul class="dp bsh">
+        <li class="ahz">
+          <div class="bsg">
+            <span class="a bgc"></span>
+          </div>
+
+          <h3>Save things</h3>
+          <p>
+            Use dropbox to save things in the "cloud" because throwing things away is stressful and this way you don't have to.
+          </p>
+        </li>
+
+        <li>
+          <div class="bsg">
+            <span class="a bhq"></span>
+          </div>
+          <h3>Fork things</h3>
+          <p>
+            Use github to share things on the internet then change them. Make things better. Free software? But not as in beer.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="fr">
+      <ul class="dp bsh">
+        <li class="ahz">
+          <div class="bsg">
+            <span class="a bkf"></span>
+          </div>
+
+          <h3>Write things</h3>
+          <p>
+            Use Medium to write things down and sound smart. Also when you write, your writings looks pretty and that is cool.
+          </p>
+        </li>
+
+        <li>
+          <div class="bsg">
+            <span class="a bpk"></span>
+          </div>
+          <h3>Tweet things</h3>
+          <p>
+            Use twitter to share 140 characters worth of anything you want. Pictures, videos, etc. It doesn't really matter.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"container-fluid"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"row my-4"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"col-sm-6"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;ul</span> <span class="br">class=</span><span class="bq">"featured-list featured-list-bordered"</span><span class="cb">&gt;</span>
+        <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"mb-5"</span><span class="cb">&gt;</span>
+          <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"featured-list-icon"</span><span class="cb">&gt;</span>
+            <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-dropbox"</span><span class="cb">&gt;&lt;/span&gt;</span>
+          <span class="cb">&lt;/div&gt;</span>
+
+          <span class="cb">&lt;h3&gt;</span>Save things<span class="cb">&lt;/h3&gt;</span>
+          <span class="cb">&lt;p&gt;</span>
+            Use dropbox to save things in the "cloud" because throwing things away is stressful and this way you don't have to.
+          <span class="cb">&lt;/p&gt;</span>
+        <span class="cb">&lt;/li&gt;</span>
+
+        <span class="cb">&lt;li&gt;</span>
+          <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"featured-list-icon"</span><span class="cb">&gt;</span>
+            <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-github"</span><span class="cb">&gt;&lt;/span&gt;</span>
+          <span class="cb">&lt;/div&gt;</span>
+          <span class="cb">&lt;h3&gt;</span>Fork things<span class="cb">&lt;/h3&gt;</span>
+          <span class="cb">&lt;p&gt;</span>
+            Use github to share things on the internet then change them. Make things better. Free software? But not as in beer.
+          <span class="cb">&lt;/p&gt;</span>
+        <span class="cb">&lt;/li&gt;</span>
+      <span class="cb">&lt;/ul&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"col-sm-6"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;ul</span> <span class="br">class=</span><span class="bq">"featured-list featured-list-bordered"</span><span class="cb">&gt;</span>
+        <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"mb-5"</span><span class="cb">&gt;</span>
+          <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"featured-list-icon"</span><span class="cb">&gt;</span>
+            <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-medium"</span><span class="cb">&gt;&lt;/span&gt;</span>
+          <span class="cb">&lt;/div&gt;</span>
+
+          <span class="cb">&lt;h3&gt;</span>Write things<span class="cb">&lt;/h3&gt;</span>
+          <span class="cb">&lt;p&gt;</span>
+            Use Medium to write things down and sound smart. Also when you write, your writings looks pretty and that is cool.
+          <span class="cb">&lt;/p&gt;</span>
+        <span class="cb">&lt;/li&gt;</span>
+
+        <span class="cb">&lt;li&gt;</span>
+          <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"featured-list-icon"</span><span class="cb">&gt;</span>
+            <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-twitter"</span><span class="cb">&gt;&lt;/span&gt;</span>
+          <span class="cb">&lt;/div&gt;</span>
+          <span class="cb">&lt;h3&gt;</span>Tweet things<span class="cb">&lt;/h3&gt;</span>
+          <span class="cb">&lt;p&gt;</span>
+            Use twitter to share 140 characters worth of anything you want. Pictures, videos, etc. It doesn't really matter.
+          <span class="cb">&lt;/p&gt;</span>
+        <span class="cb">&lt;/li&gt;</span>
+      <span class="cb">&lt;/ul&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="pull-quotes">Pull Quotes</h2>
+
+<p>Transform normal blockquotes into stylized pull quotes.</p>
+
+<div class="dc" data-example-id="">
+<blockquote class="btc">
+  <img class="xo" src="../assets/img/avatar-mdo.png" />
+  <p>
+    “They need to stop sleeping on me and get some understanding about this here game I spit!”
+  </p>
+  <cite>Mark Otto, Huge Nerd</cite>
+</blockquote>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;blockquote</span> <span class="br">class=</span><span class="bq">"pull-quote"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;img</span> <span class="br">class=</span><span class="bq">"rounded-circle"</span> <span class="br">src=</span><span class="bq">"../assets/img/avatar-mdo.png"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;p&gt;</span>
+    “They need to stop sleeping on me and get some understanding about this here game I spit!”
+  <span class="cb">&lt;/p&gt;</span>
+  <span class="cb">&lt;cite&gt;</span>Mark Otto, Huge Nerd<span class="cb">&lt;/cite&gt;</span>
+<span class="cb">&lt;/blockquote&gt;</span></code></pre></div>
+
+<h2 id="icon-list">Icon list</h2>
+
+<p>Use an icon list to place custom icons next to a list of items.</p>
+
+<div class="dc" data-example-id="">
+<ul class="bsp">
+  <li>
+    <span class="a bdh"></span>
+    Single
+  </li>
+  <li>
+    <span class="a bdh"></span>
+    Taken
+  </li>
+  <li class="active">
+    <span class="a bdh"></span>
+    Pokémon Master
+  </li>
+</ul>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;ul</span> <span class="br">class=</span><span class="bq">"iconlist"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;li&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-check"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    Single
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-check"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    Taken
+  <span class="cb">&lt;/li&gt;</span>
+  <span class="cb">&lt;li</span> <span class="br">class=</span><span class="bq">"active"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-check"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    Pokémon Master
+  <span class="cb">&lt;/li&gt;</span>
+<span class="cb">&lt;/ul&gt;</span></code></pre></div>
+
+<h2 id="stat-cards">Stat cards</h2>
+
+<p>Use stat cards to easily display large numbers, great for any kind of simple metrics and dashboard content.</p>
+
+<div class="dc" data-example-id="">
+<div class="bvz aiy">
+  <h3 class="bsr">12,938</h3>
+  <span class="bss">Page views</span>
+</div>
+<div class="bvz aiy baa">
+  <h3 class="bsr">758</h3>
+  <span class="bss">Downloads</span>
+</div>
+<div class="bvz aiy azz">
+  <h3 class="bsr">1,293</h3>
+  <span class="bss">Sign-ups</span>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard p-3"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>12,938<span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Page views<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard p-3 text-xs-center"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>758<span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Downloads<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard p-3 text-xs-right"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>1,293<span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Sign-ups<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<p>With optional carets:</p>
+
+<div class="dc" data-example-id="">
+<div class="bvz aiy">
+  <h3 class="bsr">
+    12,938
+    <small class="bst bsu">5%</small>
+  </h3>
+  <span class="bss">Page views</span>
+</div>
+<div class="bvz aiy">
+  <h3 class="bsr">
+    758
+    <small class="bst bsv">1.3%</small>
+  </h3>
+  <span class="bss">Downloads</span>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard p-3"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+    12,938
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-positive"</span><span class="cb">&gt;</span>5%<span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Page views<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard p-3"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+    758
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-negative"</span><span class="cb">&gt;</span>1.3%<span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Downloads<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<p>With background variations:</p>
+
+<div class="dc" data-example-id="">
+<div class="bvz bsw ajf ahe">
+  <h3 class="bsr">
+    12,938
+    <small class="bst bsu">5%</small>
+  </h3>
+  <span class="bss">Page views</span>
+</div>
+<div class="bvz bsx ajf ahe">
+  <h3 class="bsr">
+    758
+    <small class="bst bsv">1.3%</small>
+  </h3>
+  <span class="bss">Downloads</span>
+</div>
+<div class="bvz bsy ajf ahe">
+  <h3 class="bsr">
+    758
+    <small class="bst bsv">1.3%</small>
+  </h3>
+  <span class="bss">Downloads</span>
+</div>
+<div class="bvz bta ajf ahe">
+  <h3 class="bsr">
+    1,293
+    <small class="bst bsu">6.75%</small>
+  </h3>
+  <span class="bss">Sign-ups</span>
+</div>
+<div class="bvz bsz ajf ahe">
+  <h3 class="bsr">
+    1,293
+    <small class="bst bsu">6.75%</small>
+  </h3>
+  <span class="bss">Sign-ups</span>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard statcard-primary p-4 mb-2"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+    12,938
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-positive"</span><span class="cb">&gt;</span>5%<span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Page views<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard statcard-success p-4 mb-2"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+    758
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-negative"</span><span class="cb">&gt;</span>1.3%<span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Downloads<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard statcard-info p-4 mb-2"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+    758
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-negative"</span><span class="cb">&gt;</span>1.3%<span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Downloads<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard statcard-danger p-4 mb-2"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+    1,293
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-positive"</span><span class="cb">&gt;</span>6.75%<span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Sign-ups<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard statcard-warning p-4 mb-2"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+    1,293
+    <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-positive"</span><span class="cb">&gt;</span>6.75%<span class="cb">&lt;/small&gt;</span>
+  <span class="cb">&lt;/h3&gt;</span>
+  <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Sign-ups<span class="cb">&lt;/span&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<p>And use the grid system to size and align them:</p>
+
+<div class="dc" data-example-id="">
+<div class="c">
+  <div class="fr">
+    <div class="bvz bsw ajf">
+      <h3 class="bsr">
+        12,938
+        <small class="bst bsu">5%</small>
+      </h3>
+      <span class="bss">Page views</span>
+    </div>
+  </div>
+  <div class="fr">
+    <div class="bvz bsx ajf">
+      <h3 class="bsr">
+        758
+        <small class="bst bsv">1.3%</small>
+      </h3>
+      <span class="bss">Downloads</span>
+    </div>
+  </div>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"row"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"col-sm-6"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard statcard-primary p-4"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+        12,938
+        <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-positive"</span><span class="cb">&gt;</span>5%<span class="cb">&lt;/small&gt;</span>
+      <span class="cb">&lt;/h3&gt;</span>
+      <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Page views<span class="cb">&lt;/span&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"col-sm-6"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"statcard statcard-success p-4"</span><span class="cb">&gt;</span>
+      <span class="cb">&lt;h3</span> <span class="br">class=</span><span class="bq">"statcard-number"</span><span class="cb">&gt;</span>
+        758
+        <span class="cb">&lt;small</span> <span class="br">class=</span><span class="bq">"delta-indicator delta-negative"</span><span class="cb">&gt;</span>1.3%<span class="cb">&lt;/small&gt;</span>
+      <span class="cb">&lt;/h3&gt;</span>
+      <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"statcard-desc"</span><span class="cb">&gt;</span>Downloads<span class="cb">&lt;/span&gt;</span>
+    <span class="cb">&lt;/div&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h1 id="plugins">Plugins</h1>
+
+<h2 id="zoom">Zoom</h2>
+
+<p>The zoom plugin provides simple image zoom functionality. Add a <code class="bvx">data-action="zoom"</code> attribute to any image you want to make zoomable. Zoomed images can be closed by scroll, <code class="bvx">esc</code>, or click. Use the meta key to open raw element in new tab.</p>
+
+<h3 id="data-api">Data API</h3>
+
+<div class="dc" data-example-id="">
+<img data-action="zoom" style="width: 150px;" src="../assets/img/avatar-mdo.png" />
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;img</span> <span class="br">data-action=</span><span class="bq">"zoom"</span> <span class="br">style=</span><span class="bq">"width: 150px;"</span> <span class="br">src=</span><span class="bq">"../assets/img/avatar-mdo.png"</span><span class="cb">&gt;</span></code></pre></div>
+
+<h2 id="enter">Enter</h2>
+
+<p>Enter is a brand new plugin built to transition elements into view on scroll and offer subtle visual flourishes. Simply add a <code class="bvx">data-transition="entrance"</code> attribute and a <code class="bvx">transform</code> style to any element that you’d like to <em>enter</em> in when a user scrolls the element into view.</p>
+
+<h3 id="options">Options</h3>
+
+<ul>
+  <li>easing: <code class="bvx">cubic-bezier(.2,.7,.5,1)</code>,</li>
+  <li>duration: 1200,</li>
+  <li>delay: 0</li>
+</ul>
+
+<h3 id="javascript-api">JavaScript API</h3>
+
+<figure class="db"><pre><code class="bwa" data-lang="js"><span class="bwb">$</span><span class="bwc">(</span><span class="cs">'.js-enter'</span><span class="bwc">).</span><span class="bwb">enter</span><span class="bwc">()</span></code></pre></figure>
+
+<h3 id="data-api-1">Data API</h3>
+
+<div class="dc" data-example-id="">
+<div style="overflow: hidden">
+  <div data-transition="entrance" style="transform: translateY(50px)">
+    <p>
+      Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+    </p>
+    <p>
+      Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+    </p>
+  </div>
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">style=</span><span class="bq">"overflow: hidden"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;div</span> <span class="br">data-transition=</span><span class="bq">"entrance"</span> <span class="br">style=</span><span class="bq">"transform: translateY(50px)"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;p&gt;</span>
+      Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+    <span class="cb">&lt;/p&gt;</span>
+    <span class="cb">&lt;p&gt;</span>
+      Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+    <span class="cb">&lt;/p&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="image-grids">Image grids</h2>
+
+<p>Use the image grid plugin to quickly layout multi sized images in a grid. For the image grid to work properly, it needs to get the raw image sizes (either from a data attribute, like <code class="bvx">data-width</code> and <code class="bvx">data-height</code> or you need to wait for image load before calling <code class="bvx">.imageGrid</code>).</p>
+
+<h3 id="options-1">Options</h3>
+
+<ul>
+  <li>padding: 10,</li>
+  <li>targetHeight: 300,</li>
+  <li>display: ‘inline-block’</li>
+</ul>
+
+<h3 id="javascript-api-1">JavaScript API</h3>
+
+<div class="dc" data-example-id="">
+$('.myGrid').imageGrid()
+</div>
+<div class="db"><pre><code class="bwa" data-lang="js"><span class="bwb">$</span><span class="bwc">(</span><span class="cs">'.myGrid'</span><span class="bwc">).</span><span class="bwb">imageGrid</span><span class="bwc">()</span></code></pre></div>
+
+<h3 id="data-api-2">Data Api</h3>
+
+<div class="dc" data-example-id="">
+<div data-grid="images">
+  <img data-width="350" data-height="300" src="http://placehold.it/350x300/EEE04A/ffffff" />
+  <img data-width="420" data-height="320" src="http://placehold.it/420x320/5cb85c/ffffff" />
+  <img data-width="320" data-height="380" src="http://placehold.it/320x380/5bc0de/ffffff" />
+  <img data-width="472" data-height="500" src="http://placehold.it/472x500/f0ad4e/ffffff" />
+  <img data-width="540" data-height="360" src="http://placehold.it/540x360/FF3167/ffffff" />
+</div>
+</div>
+<div class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">data-grid=</span><span class="bq">"images"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;img</span> <span class="br">data-width=</span><span class="bq">"350"</span> <span class="br">data-height=</span><span class="bq">"300"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/350x300/EEE04A/ffffff"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;img</span> <span class="br">data-width=</span><span class="bq">"420"</span> <span class="br">data-height=</span><span class="bq">"320"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/420x320/5cb85c/ffffff"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;img</span> <span class="br">data-width=</span><span class="bq">"320"</span> <span class="br">data-height=</span><span class="bq">"380"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/320x380/5bc0de/ffffff"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;img</span> <span class="br">data-width=</span><span class="bq">"472"</span> <span class="br">data-height=</span><span class="bq">"500"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/472x500/f0ad4e/ffffff"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;img</span> <span class="br">data-width=</span><span class="bq">"540"</span> <span class="br">data-height=</span><span class="bq">"360"</span> <span class="br">src=</span><span class="bq">"http://placehold.it/540x360/FF3167/ffffff"</span><span class="cb">&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="stage">Stage</h2>
+
+<p>Use the stage plugin to reveal a hidden “shelf” of content, like some common offscreen navigation. Stage will slide in your hidden content—from the left (default) or right—and shift your page contents.</p>
+
+<p>Add <code class="bvx">data-toggle="stage"</code> and a <code class="bvx">data-target</code> to any clickable element that you want to trigger a stage transition. When sliding in from the right, use a negative distance like <code class="bvx">data-distance="-250"</code>.</p>
+
+<h3 id="options-2">Options</h3>
+
+<ul>
+  <li>easing: <code class="bvx">cubic-bezier(.2,.7,.5,1)</code></li>
+  <li>duration: 300</li>
+  <li>delay: 0</li>
+  <li>distance: 250</li>
+  <li>hiddenElements: <code class="bvx">#sidebar</code> - hidden elements visibility will be toggle’d on open/close of the stage. This is done for performance reasons in chrome.</li>
+</ul>
+
+<h3 id="customizing">Customizing</h3>
+
+<p>Stage shelves—the hidden content areas—can house just about any content, but you’ll likely have to tweak some styles depending on what you place within them.</p>
+
+<p>Be sure to match any <code class="bvx">data-distance</code> values with the CSS-based <code class="bvx">width</code> on the <code class="bvx">.stage-shelf</code>.</p>
+
+<h3 id="example">Example</h3>
+
+<p>For an interactive demo, refer to the <code class="bvx">Menu</code> button at the top of this page. <strong>The example below shows the minimal required markup.</strong></p>
+
+<figure class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"stage"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-link stage-toggle"</span> <span class="br">data-target=</span><span class="bq">".stage"</span> <span class="br">data-toggle=</span><span class="bq">"stage"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-menu"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    Menu
+  <span class="cb">&lt;/button&gt;</span>
+
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"stage-shelf"</span><span class="cb">&gt;</span>
+    <span class="as">&lt;!-- Hidden shelf content --&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+
+  <span class="as">&lt;!-- All other page content --&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></figure>
+
+<p>For a right-aligned stage shelf and button, the <strong>minimal required markup looks like this:</strong></p>
+
+<figure class="db"><pre><code class="bvy" data-lang="html"><span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"stage"</span><span class="cb">&gt;</span>
+  <span class="cb">&lt;button</span> <span class="br">class=</span><span class="bq">"btn btn-link stage-toggle stage-toggle-right"</span> <span class="br">data-target=</span><span class="bq">".stage"</span> <span class="br">data-toggle=</span><span class="bq">"stage"</span> <span class="br">data-distance=</span><span class="bq">"-250"</span><span class="cb">&gt;</span>
+    <span class="cb">&lt;span</span> <span class="br">class=</span><span class="bq">"icon icon-menu"</span><span class="cb">&gt;&lt;/span&gt;</span>
+    Menu
+  <span class="cb">&lt;/button&gt;</span>
+
+  <span class="cb">&lt;div</span> <span class="br">class=</span><span class="bq">"stage-shelf stage-shelf-right"</span><span class="cb">&gt;</span>
+    <span class="as">&lt;!-- Hidden shelf content --&gt;</span>
+  <span class="cb">&lt;/div&gt;</span>
+
+  <span class="as">&lt;!-- All other page content --&gt;</span>
+<span class="cb">&lt;/div&gt;</span></code></pre></figure>
+
+
+
+        <a class="docs-top" style="display: none" href="#">Back to top</a>
+      </div>
+    
+
+  </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/tether.min.js"></script>
+    <script src="../assets/js/toolkit.js"></script>
+    <script src="../assets/js/application.js"></script>
+  </body>
+</html>
+

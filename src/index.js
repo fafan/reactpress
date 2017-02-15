@@ -100,21 +100,33 @@ const applicationStore = createStore(
 /*******************************************************************************
  * Setup application
  **/
-require('!!script!../theme/js/jquery.min.js')
-require('../theme/css/_bootstrap.scss')
-require('../theme/js/bootstrap.min.js')
 
-require('../theme/wp/style.css')
-require('../theme/wp/index.php')
-require('../theme/wp/header.php')
-require('../theme/wp/footer.php')
-require('../theme/wp/functions.php')
+// Themes
+require('!!script!../static/theme/assets/js/jquery.min.js')
+require('!!script!../static/theme/assets/js/tether.min.js')
+require('!!script!../static/theme/assets/js/toolkit.js')
+require('!!script!../static/theme/assets/js/application.js')
+require('../static/theme/assets/css/toolkit-startup.css')
+require('../static/theme/assets/css/application-startup.css')
 
-import Application from './components/Application.jsx'
+// Skeleton
+require('../static/template/style.css')
+require('../static/template/index.php')
+require('../static/template/header.php')
+require('../static/template/footer.php')
+require('../static/template/functions.php')
 
+// Index
+require('./index.html')
+
+// Helper
+require('../static/helper/functions.js')
+
+// Render default component
+import Website from './components/Website.jsx'
 render (
   <Provider store={applicationStore}>
-    <Application store={applicationStore} />
+    <Website store={applicationStore} />
   </Provider>,
   document.getElementById('application')
 )

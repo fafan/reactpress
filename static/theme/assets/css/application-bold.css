@@ -1,0 +1,73 @@
+/*
+ * Bold Application level overrides
+ * (things that dont make sense in a toolkit :)
+ * copyright @colossal 2015
+ */
+
+/* main app navbar */
+.app-navbar {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+.app-navbar .a {
+  margin-right: 5px;
+}
+
+/* wayne */
+.b {
+  background-color: #000;
+}
+.b .c {
+  margin-bottom: 75px;
+}
+
+/* music grid */
+.d {
+  margin-top: -25px;
+}
+.d .e {
+  position: relative;
+  top: -75px;
+  z-index: 2;
+}
+.d img {
+  width: 100%;
+}
+
+
+/* chainz block */
+.f {
+  z-index: 5;
+}
+.f .g {
+  border-bottom: 10px solid #eee04a;
+}
+
+
+/* kanye block */
+.h {
+  z-index: 4;
+}
+.h .g {
+  border-bottom: 10px solid #ff3167;
+}
+
+
+/* mosdef block */
+.i {
+  z-index: 3;
+  margin-bottom: -25px;
+}
+.i .g {
+  border-bottom: 10px solid #eee04a;
+}
+
+
+/* nicki */
+.j {
+  background-color: #e7e9d4;
+}
+.j h4 {
+  font-weight: 400;
+}

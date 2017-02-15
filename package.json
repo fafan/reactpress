@@ -41,8 +41,8 @@
     "url": "git://github.com/fafan/reactpress.git"
   },
   "scripts": {
-    "production": "webpack --production --optimize-occurence-order --optimize-dedupe --optimize-minimize",
-    "development": "webpack --progress --debug --colors --watch",
+    "production": "webpack --production --progress --optimize-dedupe --optimize-minimize",
+    "development": "webpack --development --progress --debug --colors --watch",
     "start": "http-server -p 8000 dist/",
     "test": ""
   },

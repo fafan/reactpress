@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Reactpress</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-    <% if (typeof DEBUG == 'undefined') { %><link href="css/bundle.css?<%= DIST_TIMESTAMP %>" rel="stylesheet" /><% } %>
-  </head>
-  <body>
-    <div id="application"></div>
-    <script src="js/bundle.js?<%= DIST_TIMESTAMP %>" type="text/javascript"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Reactpress</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+  <% if (typeof DEBUG == 'undefined') { %><link href="assets/css/bundle.css?<%= DIST_TIMESTAMP %>" rel="stylesheet" /><% } %>
+  <style>
+    @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+      #stage {
+        height: 1px;
+        overflow: auto;
+        min-height: 100vh;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="application"></div>
+  <script src="assets/js/bundle.js?<%= DIST_TIMESTAMP %>" type="text/javascript"></script>
+</body>
+
 </html>
