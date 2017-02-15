@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: WP REST API - Swagger generate
+ * Plugin Name: WP REST API - Swagger generator
  * Description: Swagger for the WP REST API
  * Author: Andrew Mee
- * Author URI: 
+ * Author URI: https://github.com/starfishmod/WPAPI-SwaggerGenerator
  * Version: 0.0.1
- * Plugin URI:
+ * Plugin URI: https://github.com/starfishmod/WPAPI-SwaggerGenerator
  * License: GPL2+
  */
 
@@ -20,7 +20,7 @@ function swagger_rest_api_init() {
 	$swagger_controller = new WP_REST_Swagger_Controller();
 	$swagger_controller->register_routes();
 
-	
+
 
 }
 

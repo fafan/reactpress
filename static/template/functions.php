@@ -57,4 +57,10 @@ function blog_entry_summary_html( $post) {
 	</p><?php
 }
 
+/**
+ * API Endpoints
+ */
+
+include_once 'api.php';
+
 ?>

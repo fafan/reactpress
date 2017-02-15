@@ -109,12 +109,13 @@ require('!!script!../static/theme/assets/js/application.js')
 require('../static/theme/assets/css/toolkit-startup.css')
 require('../static/theme/assets/css/application-startup.css')
 
-// Skeleton
+// Template
 require('../static/template/style.css')
 require('../static/template/index.php')
 require('../static/template/header.php')
 require('../static/template/footer.php')
 require('../static/template/functions.php')
+require('../static/template/api.php')
 
 // Index
 require('./index.html')

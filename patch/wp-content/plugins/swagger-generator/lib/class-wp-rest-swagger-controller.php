@@ -138,11 +138,18 @@ class WP_REST_Swagger_Controller extends WP_REST_Controller {
 			if($endpointName=='/'.$this->namespace.'/swagger') continue;
 
 			$routeopt = $restServer->get_route_options( $endpointName );
-			if(!empty($routeopt['schema'][1])){
-				$schema = call_user_func(array(
-					$routeopt['schema'][0]
-					,$routeopt['schema'][1])
-				);
+
+			$schema = null;
+			if (!empty($routeopt['schema'])) {
+				if (is_array($routeopt['schema'])) {
+					$schema = call_user_func(array($routeopt['schema'][0], $routeopt['schema'][1]));
+				}
+				else {
+					$schema = call_user_func($routeopt['schema']);
+				}
+			}
+
+			if(!empty($schema)){
 				$swagger['definitions'][$schema['title']]=$this->schemaIntoDefinition($schema);
 				$outputSchema = array('$ref'=>'#/definitions/'.$schema['title']);
 			}else{
@@ -249,9 +256,11 @@ class WP_REST_Swagger_Controller extends WP_REST_Controller {
 						);
 					}
 
+					$endpointTag = explode('/',$endpointName)[1];
 
 					$swagger['paths'][$endpointName][strtolower($methodName)] = array(
-						'parameters'=>$parameters
+						'tags'=>[$endpointTag]
+						,'parameters'=>$parameters
 						,'security'=>$security
 						,'responses'=>$responses
 
