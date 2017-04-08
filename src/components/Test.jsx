@@ -1,14 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-export const Test = ({ store }) => {
-  var state = store.getState()
-  var lastState = state ? state.last() : undefined
-  var info = lastState ? lastState.info : undefined
+export const Test = () => {
 
   return (
-    <div>
-      <h1>{ info }</h1>
+    <div className="test-page">
+      <h1>Test</h1>
 
       <button className="btn btn-primary" onClick={e => {
             store.dispatch({ type: 'PUSH', info: 'Hello' })
@@ -34,4 +31,4 @@ export const Test = ({ store }) => {
   )
 }
 
-export default connect((state)=>{return {state}}) (Test)
+export default Test
